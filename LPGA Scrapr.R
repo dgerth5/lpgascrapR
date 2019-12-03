@@ -1,7 +1,7 @@
-library('rvest')
+library(rvest)
 library(tidyr)
 
-url <- "https://www.lpga.com/tournaments/cp-womens-open/results"
+url <- "https://www.lpga.com/tournaments/cp-womens-open/results" ## this is an example, insert desired tournament url here
 webpage <- read_html(url)
 
 ranking <- html_nodes(webpage, '.results .table-content:nth-child(1)')
@@ -40,4 +40,5 @@ R3 <- ab$R3
 R4 <- ab$R4
 df.rd <- data.frame(rank,player,R1,R2,R3,R4,total)
 View(df.rd)
+
 
